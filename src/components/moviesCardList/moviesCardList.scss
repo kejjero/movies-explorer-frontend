@@ -1,0 +1,16 @@
+@import "../../scss/mixins";
+
+.moviesCardList {
+  margin-top: 70px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+
+    row-gap: 38px;
+    column-gap: 5px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+}

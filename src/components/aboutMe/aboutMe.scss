@@ -1,0 +1,107 @@
+@import "../../scss/mixins";
+
+.aboutMe {
+  width: 100%;
+  @include flex-center-center;
+
+  &__wrapper {
+    margin: 110px 0  125px 0;
+  }
+
+  &__student {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 66px;
+
+    &-info {
+      max-width: 600px;
+    }
+  }
+
+  &__container {
+    @include flex-column;
+    justify-content: space-between;
+    min-height: 327px;
+  }
+
+  &__name {
+    @include reset;
+    @include text-format(400, 50px, 58px);
+    letter-spacing: -0.04em;
+  }
+
+  &__about {
+    @include reset;
+    @include text-format(500, 18px, 20px);
+    color: #111111;
+    margin-top: 18px;
+
+  }
+
+  &__description {
+    @include reset;
+    @include text-format(400, 14px, 22px);
+    margin-top: 26px;
+  }
+
+  &__socials {
+    @include reset-list;
+  }
+
+  &__link {
+    @include reset;
+    text-decoration: none;
+    @include text-format(500, 14px, 17px);
+    color: #000;
+    transition: color ease-in-out 0.2s;
+
+    &:hover {
+      color: #2BE080;
+    }
+  }
+
+  &__avatar {
+    width: 270px;
+    height: 327px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.portfolio {
+  margin-top: 100px;
+
+  &__subtitle {
+    @include reset;
+    margin-bottom: 50px;
+    @include text-format(400, 18px, 20px);
+    color: #A0A0A0;
+  }
+
+  &__projects {
+    @include reset-list;
+    @include flex-column;
+  }
+
+  &__project {
+    @include flex-center-between;
+    min-height: 70px;
+    border-bottom: 1px solid #E6E6E6;;
+
+    &-link {
+      @include reset;
+      @include flex-center-between;
+      @include text-format(400, 30px, 50px);
+      text-decoration: none;
+      width: 100%;
+      letter-spacing: -0.04em;
+      color: #000;
+      transition: color ease-in-out 0.2s;
+
+      &:hover {
+        color: #2BE080;
+      }
+    }
+  }
+}

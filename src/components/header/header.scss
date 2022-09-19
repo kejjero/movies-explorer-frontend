@@ -1,0 +1,22 @@
+@import "../../scss/mixins";
+
+.header {
+  @include flex-center;
+  min-height: 74px;
+  margin: 0 auto;
+  background-color: #073042;
+
+  &__wrapper {
+    @include flex-center-between;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    transition: transform ease-in-out 0.2s;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../scss/mixins";
+
+.navigation {
+  @include flex-center;
+  gap: 30px;
+
+  &__sign-up {
+    @include reset;
+    @include text-format(500, 12px, 16px);
+    color: #fff;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transition: color ease-in-out 0.2s;
+
+    &:hover {
+      color: #2BE080;
+    }
+  }
+
+  &__sign-in {
+    button {
+      background-color: #2BE080;
+      text-transform: none;
+    }
+  }
+
+  &__profile {
+
+  }
+
+  &__movies {
+    @include reset-list;
+    @include flex-center-between;
+    gap: 20px;
+
+    &-link {
+
+      a {
+        @include reset;
+        @include text-format(400, 14px, 18px);
+        text-decoration: none;
+        color: #000;
+        transition: color ease-in-out 0.2s;
+
+        &:hover {
+          color: #2BE080;
+        }
+      }
+    }
+  }
+}

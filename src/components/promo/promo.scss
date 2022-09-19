@@ -1,0 +1,35 @@
+@import "../../scss/mixins";
+
+.promo {
+  background-color: #073042;
+  width: 100%;
+  min-height: 524px;
+  @include flex-center-center;
+
+  &__wrapper {
+    @include flex-column;
+    align-items: center;
+    position: relative;
+  }
+
+  &__preview {
+    width: 320px;
+    height: 324px;
+    background: url(../../images/promo__prevew.png);
+  }
+
+  &__title {
+    @include reset;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    min-width: 734px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
