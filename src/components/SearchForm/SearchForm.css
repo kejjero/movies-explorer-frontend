@@ -1,0 +1,179 @@
+.app__search-form {
+  margin-bottom: 80px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+@media (max-width: 768px) {
+  .app__search-form {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .app__search-form {
+    margin-bottom: 37px;
+  }
+}
+
+.search-form__string {
+  box-sizing: border-box;
+  margin: 0;
+  border: 1.5px solid rgba(170, 170, 170, 0.2);
+  position: relative;
+  border-radius: 50px;
+  padding: 6px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .search-form__string {
+    margin-bottom: 5px;
+  }
+}
+
+.search-form__input {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-align: start;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-left: 22px;
+  color: #fff;
+}
+
+.search-form__input_disabled {
+  color: #565656;
+}
+
+@media (max-width: 500px) {
+  .search-form__input {
+    font-size: 11px;
+  }
+}
+
+.search-form__label {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: auto;
+}
+
+.search-form__label_disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.search-form__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.search-form__pseudo-item {
+  box-sizing: border-box;
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #c0bfbf;
+  cursor: pointer;
+}
+
+.search-form__pseudo-item_active{
+  background-color: #3DDC84;
+}
+
+.search-form__circle {
+  position: absolute;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-form__circle_active {
+  left: 6px;
+}
+
+.search-form__radio:checked + .search-form__pseudo-item > .search-form__circle {
+  transform: translate(100%);
+  background-color: #3ddc84;
+}
+
+.search-form__label-text {
+  font-size: 13px;
+  line-height: 1.28;
+}
+
+@media (max-width: 500px) {
+  .search-form__label-text {
+    font-size: 11px;
+    line-height: 1.63;
+  }
+}
+
+.search-form__icon {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  border: 1px solid #424242;
+  padding: 9px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .search-form__icon {
+    display: none;
+  }
+}
+
+.button_type_search {
+  position: relative;
+  top: 0;
+  right: 0;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form__error {
+  display: block;
+  height: 18px;
+  font-size: 14px;
+  line-height: 1.28;
+  text-align: center;
+  color: #f00;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 500px) {
+  .search-form__error {
+    font-size: 11px;
+    line-height: 1.63;
+    margin-bottom: 22px;
+  }
+}
