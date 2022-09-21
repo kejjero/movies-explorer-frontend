@@ -1,0 +1,15 @@
+.register {
+  width: 100%;
+}
+
+.register__inputs {
+  padding: 0;
+  border: none;
+  margin: 0 0 40px;
+}
+
+@media (max-width: 500px) {
+  .register__inputs {
+    margin-bottom: 132px;
+  }
+}
