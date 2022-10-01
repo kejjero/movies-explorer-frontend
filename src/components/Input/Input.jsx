@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Input.css";
 
-const Input = ({ name, label, error, onChange, modifier, ...props }) => {
+const Input = ({ name, label, error, modifier, ...props }) => {
   return (
     <>
       <div className={`input app__input input_type_${modifier}`}>
@@ -17,7 +17,6 @@ const Input = ({ name, label, error, onChange, modifier, ...props }) => {
           id={name}
           name={name}
           {...props}
-          onChange={(evt) => onChange(evt.target.value)}
         />
       </div>
       <span className={`input__error input__error_type_${modifier}`}>
