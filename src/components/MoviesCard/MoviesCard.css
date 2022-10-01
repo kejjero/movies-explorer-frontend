@@ -13,6 +13,10 @@
   padding: 7px 16px;
 }
 
+.movies-card__button {
+  padding: 0;
+}
+
 @media (max-width: 500px) {
   .movies-card__middle {
     padding: 10px 14px;
@@ -71,14 +75,3 @@
   }
 }
 
-.button_type_gray {
-  background-color: #313131;
-}
-
-.button_type_card {
-  border-radius: 30px;
-  padding: 0;
-  height: 29px;
-  font-size: 12px;
-  line-height: 0.91;
-}
