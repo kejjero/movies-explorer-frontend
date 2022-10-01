@@ -12,7 +12,6 @@ import currentUserContext from "../../context/currentUserContext";
 const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const location = useLocation()
     const { currentUser } = useContext(currentUserContext);
 
     useEffect(() => {
@@ -32,7 +31,7 @@ const Header = () => {
                 <div className="header__wrapper">
                     <nav className="header__nav">
                         {
-                            location.pathname !== '/' &&
+                            isLoggedIn &&
                             <div className="header__links">
                                 <NavLink
                                     className="header__link"
@@ -52,8 +51,7 @@ const Header = () => {
                         }
                         <div className="header__account-menu">
                             {isLoggedIn ? (
-
-                                window.screen.width > 1280 &&
+                                window.screen.width  > 1280 &&
                                 <Link className="header__linked-button" to="/profile">
                                     <AccountButton modifier="button_type_account" />
                                 </Link>
