@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {NavLink, Link, useLocation} from "react-router-dom";
 import Icons from "../Icons";
 import Button from "../Button/Button";
@@ -7,15 +7,21 @@ import AccountButton from "../AccountButton/AccountButton";
 import Sidebar from "../Sidebar/Sidebar";
 import Logo from "../Logo/Logo";
 import "./Header.css";
+import currentUserContext from "../../context/currentUserContext";
 
 const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const isLoggedIn = true;
-    const isLocation = useLocation()
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const location = useLocation()
+    const { currentUser } = useContext(currentUserContext);
 
-    const sidebarHandler = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    }
+    useEffect(() => {
+        currentUser.name === ""
+            ? setIsLoggedIn(false)
+            : setIsLoggedIn(true);
+    }, [currentUser.name])
+
+    const sidebarHandler = () => setIsSidebarOpen(!isSidebarOpen);
 
     return (
         <Container>
@@ -26,7 +32,7 @@ const Header = () => {
                 <div className="header__wrapper">
                     <nav className="header__nav">
                         {
-                            isLocation.pathname !== '/' &&
+                            location.pathname !== '/' &&
                             <div className="header__links">
                                 <NavLink
                                     className="header__link"
