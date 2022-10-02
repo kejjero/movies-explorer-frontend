@@ -35,6 +35,11 @@
   justify-content: space-between;
 }
 
+.search-form__wrapper {
+  position: relative;
+  width: 100%;
+}
+
 @media (max-width: 500px) {
   .search-form__string {
     margin-bottom: 5px;
@@ -167,13 +172,17 @@
   line-height: 1.28;
   text-align: center;
   color: #f00;
-  margin-bottom: 6px;
+  position: absolute;
+  top: 80px;
+  left: 45%;
 }
+
 
 @media (max-width: 500px) {
   .search-form__error {
     font-size: 11px;
+    left: 30%;
+    top: 55px;
     line-height: 1.63;
-    margin-bottom: 22px;
   }
 }

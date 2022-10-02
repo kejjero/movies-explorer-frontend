@@ -1,45 +1,27 @@
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
-import cardImage from "../../images/card_image1.jpg"
 
-const MoviesCardList = ({isSave}) => {
-
-  // временно захардкодил
-  const movies = [
-    {
-      title: '33 слова о дизайне',
-      image: cardImage,
-      duration: '1ч 21м'
-    },
-    {
-      title: '33 слова о дизайне',
-      image: cardImage,
-      duration: '1ч 21м'
-    },
-    {
-      title: '33 слова о дизайне',
-      image: cardImage,
-      duration: '1ч 21м'
-    },
-    {
-      title: '33 слова о дизайне',
-      image: cardImage,
-      duration: '1ч 21м'
-    }
-  ]
+const MoviesCardList = ({allMovies, onSavedPage, onSaveHandler, onDeleteHandler, savedMovies}) => {
 
 
-  return (
-    <ul
-      className={'movies-list movies-page__movies-list'}
-    >
-      {
-        movies.map((item, index) => (
-          <MoviesCard key={index} item={item} isSave={isSave}/>
-        ))
-      }
-    </ul>
-  );
+    return (
+        <ul
+            className={`movies-list movies-page__movies-list
+      ${onSavedPage ? "movies-page__movie-list_type_save" : ""}`}
+        >
+            {allMovies &&
+                allMovies.map((movie) => (
+                    <MoviesCard
+                        key={movie._id || movie.id}
+                        onSaveHandler={onSaveHandler}
+                        onDeleteHandler={onDeleteHandler}
+                        savedMovies={savedMovies || allMovies}
+                        onSavedPage={onSavedPage}
+                        {...movie}
+                    />
+                ))}
+        </ul>
+    );
 };
 
 export default MoviesCardList;
